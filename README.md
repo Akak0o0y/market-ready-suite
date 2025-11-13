@@ -18,9 +18,13 @@ Status: working APIs with baseline logic. Replace the model.py in each service w
 
 ## Quick start
 python -m venv .venv
+
 Windows: .venv\Scripts\activate
+
 macOS/Linux: source .venv/bin/activate
+
 pip install -r requirements.txt
+
 uvicorn app:app --reload --port 8000
 
 
