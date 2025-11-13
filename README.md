@@ -114,6 +114,10 @@ Data/Utils: pandas, numpy
 
 UI: Simple HTML/JS page under demo/ for manual calls
 
+
+## Project layout
+
+
 app.py
 common/
   utils.py
