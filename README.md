@@ -18,8 +18,8 @@ Status: working APIs with baseline logic. Replace the model.py in each service w
 
 ## Quick start
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
+Windows: .venv\Scripts\activate
+macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app:app --reload --port 8000
 
@@ -135,7 +135,7 @@ Swap projects/*/model.py with your model code and keep the same function signatu
 
 For school vision, add your detector and call it inside the route handler.
 
-Notes
+
 
 All endpoints are local by default (http://127.0.0.1:8000).
 
