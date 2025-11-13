@@ -114,7 +114,6 @@ Data/Utils: pandas, numpy
 
 UI: Simple HTML/JS page under demo/ for manual calls
 
-Project layout
 app.py
 common/
   utils.py
@@ -140,6 +139,7 @@ demo/
   static/{styles.css, main.js, sample.jpg}
 requirements.txt
 README.md
+
 
 Replacing baselines with your logic
 
