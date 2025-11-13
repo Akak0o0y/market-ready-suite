@@ -1,8 +1,8 @@
-Market-Ready Suite
+## Market-Ready Suite
 
 Small FastAPI project that exposes five independent services commonly needed in Riyadh/GCC use-cases. Each service has a simple HTTP API and a minimal web page for quick testing.
 
-Services
+## Services
 
 Air Quality Nowcast – short-term PM2.5/PM10 with a coarse AQI band.
 
@@ -16,7 +16,7 @@ School-Zone Safety (Vision) – image endpoint for traffic-violation detection n
 
 Status: working APIs with baseline logic. Replace the model.py in each service when you add real models/data.
 
-Quick start
+## Quick start
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 # macOS/Linux: source .venv/bin/activate
@@ -29,7 +29,7 @@ App: http://127.0.0.1:8000
 API docs (OpenAPI/Swagger): http://127.0.0.1:8000/docs
 
 API usage
-1) Air Quality Nowcast
+## 1) Air Quality Nowcast
 
 GET /api/nowcast?district=العقيق
 
@@ -46,7 +46,7 @@ Response (example):
   ]
 }
 
-2) Flash-Flood Street Risk
+## 2) Flash-Flood Street Risk
 
 GET /api/flood_risk?polyline_id=R123
 
@@ -57,7 +57,7 @@ Response:
 
 {"polyline_id":"R123","risk_score":0.58,"band":"Yellow"}
 
-3) KSA Address Normalizer / Geocoder
+## 3) KSA Address Normalizer / Geocoder
 
 GET /api/geocode?q=الرياض، العقيق، شارع الامام
 
@@ -75,7 +75,7 @@ Response:
   "confidence":0.81
 }
 
-4) Water Leak / Abnormal Use
+## 4) Water Leak / Abnormal Use
 
 GET /api/water/anomaly?meter_id=A1
 
@@ -91,7 +91,7 @@ Response:
   "reason":"night average 1.35 m3/h exceeds threshold"
 }
 
-5) School-Zone Safety (image upload)
+## 5) School-Zone Safety (image upload)
 
 POST /api/school/risk
 
@@ -117,34 +117,18 @@ UI: Simple HTML/JS page under demo/ for manual calls
 
 ## Project layout
 
+- `app.py`
+- `common/` → `utils.py`, `eval.py`
+- `projects/aq_nowcast/` → `router.py`, `model.py`
+- `projects/flood_risk/` → `router.py`, `model.py`
+- `projects/address_norm/` → `router.py`, `model.py`
+- `projects/water_leak/` → `router.py`, `model.py`, `sample_data/meter_sample.csv`
+- `projects/school_vision/` → `router.py`
+- `demo/templates/index.html`
+- `demo/static/{styles.css, main.js, sample.jpg}`
+- `requirements.txt`, `README.md`
 
-app.py
-common/
-  utils.py
-  eval.py
-projects/
-  aq_nowcast/      # /api/nowcast
-    router.py
-    model.py
-  flood_risk/      # /api/flood_risk
-    router.py
-    model.py
-  address_norm/    # /api/geocode
-    router.py
-    model.py
-  water_leak/      # /api/water/anomaly
-    router.py
-    model.py
-    sample_data/meter_sample.csv
-  school_vision/   # /api/school/risk
-    router.py
-demo/
-  templates/index.html
-  static/{styles.css, main.js, sample.jpg}
-requirements.txt
-README.md
-
-
+## Notes:
 Replacing baselines with your logic
 
 Swap projects/*/model.py with your model code and keep the same function signatures.
