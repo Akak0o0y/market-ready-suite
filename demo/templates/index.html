@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Market-Ready Suite</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Market‑Ready Suite (Riyadh)</h1>
+    <p>Five product MVPs in one API. Try them below.</p>
+
+    <section>
+      <h2>1) AQ Nowcast</h2>
+      <input id="district" placeholder="e.g., العقيق" value="العقيق"/>
+      <button onclick="callNowcast()">Get Nowcast</button>
+      <pre id="nowcastOut"></pre>
+    </section>
+
+    <section>
+      <h2>2) Flood Risk</h2>
+      <input id="poly" placeholder="e.g., R123" value="R123"/>
+      <button onclick="callFlood()">Check Risk</button>
+      <pre id="floodOut"></pre>
+    </section>
+
+    <section>
+      <h2>3) Address Normalizer</h2>
+      <input id="addr" style="width: 80%" placeholder="e.g., الرياض، العقيق، شارع الامام" value="الرياض، العقيق، شارع الامام"/>
+      <button onclick="callGeo()">Geocode</button>
+      <pre id="geoOut"></pre>
+    </section>
+
+    <section>
+      <h2>4) Water Leak Anomaly</h2>
+      <input id="meter" placeholder="A1" value="A1"/>
+      <button onclick="callWater()">Analyze</button>
+      <pre id="waterOut"></pre>
+    </section>
+
+    <section>
+      <h2>5) School-Zone Vision (stub)</h2>
+      <input type="file" id="file" accept="image/*" />
+      <button onclick="callSchool()">Upload</button>
+      <pre id="schoolOut"></pre>
+      <p>Sample image is bundled at <code>/static/sample.jpg</code>.</p>
+    </section>
+  </main>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>
